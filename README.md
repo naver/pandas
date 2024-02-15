@@ -39,16 +39,16 @@ pip install lvis
 
 We download and extract the `VOC 2012`, `COCO 2017`, and `LVISv1` datasets as follows.
 
-- [VOC 2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/) [[1]](#1)
+- [VOC 2012](http://host.robots.ox.ac.uk/pascal/VOC/voc2012/)
     - Download and extract the images and annotations for the VOC 2012 dataset.
     - Download the `10-10` folder of VOC from the WILSON repo 
     [here](https://github.com/fcdl94/WILSON/tree/main/data/voc/10-10). Then download `train_aug.txt` and `val.txt` from the WILSON repo [here](https://github.com/fcdl94/WILSON/tree/main/data/voc/splits). The `10-10` folder and two text files should all be in the same directory (e.g., `PANDAS/voc_splits`).
 
-- [COCO 2017](https://cocodataset.org/#download) [[2]](#2)
+- [COCO 2017](https://cocodataset.org/#download)
     - Download and extract the images for the COCO 2017 dataset.
     - Download the `coco_half_train.json` and `coco_half_val.json` annotations files for base training from [the original RNCDL repo](https://github.com/vlfom/RNCDL).
 
-- [LVISv1](https://www.lvisdataset.org/dataset) [[3]](#3)
+- [LVISv1](https://www.lvisdataset.org/dataset)
     - Download the `train` (1 GB) and `val` (192 MB) json annotation files for the LVISv1 dataset.
     LVIS uses the same images as COCO 2017, so we do not need to download images.
     - We need to create two additional json annotation files: 1) `coco_half_train_lvis_ann.json` which is the same as `coco_half_train.json`, but uses the LVIS labels instead of COCO labels for the 80
