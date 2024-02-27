@@ -2,19 +2,10 @@ PANDAS: Prototype-based Novel Class Discovery and Detection
 =====================================
 This is PyTorch code for our paper available on [arXiv]().
 
-**Abstract:** Standard object detectors are trained once and for all on a fixed set of classes. However, this
-closed-world assumption is often unrealistic in practice, as new classes will inevitably emerge after the detector is
-deployed in the wild. In this work, we look at ways to extend a detector trained for a set of base classes so it can i)
-spot the presence of novel classes, and ii) automatically enrich its repertoire to be able to detect those newly
-discovered classes together with the base ones. We propose PANDAS, a method for novel class discovery and detection. It
-discovers clusters representing novel classes from unlabeled data, and represents old and new classes with prototypes.
-During inference, a distance-based classifier uses these prototypes to assign a label to each detected object instance.
-The simplicity of our method makes it widely applicable. We experimentally demonstrate the effectiveness of PANDAS on
-the VOC 2012 and COCO-to-LVIS benchmarks. It performs favorably against state-of-the-art methods for this task while
-being computationally more affordable.
+**Abstract:** Object detectors are typically trained once and for all on a fixed set of classes. However, this closed-world assumption is unrealistic in practice, as new classes will inevitably emerge after the detector is deployed in the wild. In this work, we look at ways to extend a detector trained for a set of base classes so it can i) spot the presence of novel classes, and ii) automatically enrich its repertoire to be able to detect those newly discovered classes together with the base ones. We propose PANDAS, a method for novel class discovery and detection. It discovers clusters representing novel classes from unlabeled data, and represents old and new classes with prototypes. During inference, a distance-based classifier uses these prototypes to assign a label to each detected object instance. The simplicity of our method makes it widely applicable. We experimentally demonstrate the effectiveness of PANDAS on the VOC 2012 and COCO-to-LVIS benchmarks. It performs favorably against the state of the art for this task while being computationally more affordable.
 
 
-**Overview of our approach.** Given a detector trained on **Base** classes, we compute **Base** prototypes. We then use components from this detector during the discovery phase to compute prototypes for the **Novel** classes using clustering. At inference time, test image proposals are compared to prototypes for the **Base** and **Novel** classes using a similarity metric S. A background classifier is then used to filter boxes that are likely background regions, before the detector outputs classification scores and regression coordinates.
+**Overview of our approach.** Given an annotated training set and a detector trained for **Base** classes on that training set, we compute **Base** prototypes. Then components from this detector are used during the discovery phase to compute prototypes for the **Novel** classes using clustering (top). During inference, similarity scores of new box features to these prototypes are computed to provide predicted scores (bottom).
 ![PANDAS-Img1](./images/pandas_method.png)
 
 ## Dependencies
