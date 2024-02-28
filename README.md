@@ -1,6 +1,6 @@
 PANDAS: Prototype-based Novel Class Discovery and Detection
 =====================================
-This is PyTorch code for our paper available on [arXiv]().
+This is PyTorch code for our paper available on [arXiv](https://arxiv.org/abs/2402.17420).
 
 **Abstract:** Object detectors are typically trained once and for all on a fixed set of classes. However, this closed-world assumption is unrealistic in practice, as new classes will inevitably emerge after the detector is deployed in the wild. In this work, we look at ways to extend a detector trained for a set of base classes so it can i) spot the presence of novel classes, and ii) automatically enrich its repertoire to be able to detect those newly discovered classes together with the base ones. We propose PANDAS, a method for novel class discovery and detection. It discovers clusters representing novel classes from unlabeled data, and represents old and new classes with prototypes. During inference, a distance-based classifier uses these prototypes to assign a label to each detected object instance. The simplicity of our method makes it widely applicable. We experimentally demonstrate the effectiveness of PANDAS on the VOC 2012 and COCO-to-LVIS benchmarks. It performs favorably against the state of the art for this task while being computationally more affordable.
 
@@ -165,10 +165,10 @@ See our [License File](./PANDAS-LICENSE.txt) for more details
 If using this code, please cite our paper.
 
 ```
-@article{Hayes_2023_PANDAS,
+@article{Hayes_2024_PANDAS,
   title={PANDAS: Prototype-based Novel Class Discovery and Detection},
-  author={Hayes, Tyler L. and de Souza, Cesar and Kim, Namil and Kim, Jiwon and Volpi, Riccardo and Larlus, Diane},
-  journal={arXiv preprint},
-  year={2023}
+  author={Hayes, Tyler L. and de Souza, César R. and Kim, Namil and Kim, Jiwon and Volpi, Riccardo and Larlus, Diane},
+  journal={arXiv preprint arXiv:2402.17420},
+  year={2024}
 }
 ```
