@@ -144,6 +144,8 @@ def make_loader(dataset, shuffle=False, batch_size=1, num_workers=4):
 def get_loaders(args):
     # make datasets
     if args.dataset == 'voc':
+        # note that dataset_base is filtered such that it only returns boxes and labels for base classes
+        # this is done using classes 1-10 as base for VOC
         dataset_base, dataset_novel, _ = get_voc_datasets(args.data_path, args.split_path,
                                                           split=args.voc_split,
                                                           augmentation=None)
@@ -156,6 +158,8 @@ def get_loaders(args):
     elif args.dataset == 'lvis':
         class_names, base_ids = get_lvis_key(args.lvis_train_json)
 
+        # note that dataset_base is filtered such that it only returns boxes and labels for base classes
+        # this is done using args.coco_half_train_json
         dataset_base = LvisDataset(root=args.data_path,
                                    anno_root=args.coco_half_train_json,
                                    included_cats=base_ids)
@@ -173,6 +177,7 @@ def get_loaders(args):
         all_ids = np.arange(1, 1204)
         novel_ids = np.setdiff1d(all_ids, base_ids)
     else:
+        # if implementing a new dataset, dataset_base must only return boxes and labels for base classes
         raise NotImplementedError
 
     # make data loaders
