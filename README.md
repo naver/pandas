@@ -166,7 +166,7 @@ If using this code, please cite our paper.
 
 ```
 @InProceedings{Hayes_2024_PANDAS,
-  title={PANDAS: Prototype-based Novel Class Discovery and Detection},
+  title={{PANDAS}: Prototype-based Novel Class Discovery and Detection},
   author={Hayes, Tyler L. and de Souza, César R. and Kim, Namil and Kim, Jiwon and Volpi, Riccardo and Larlus, Diane},
   journal={Conference on Lifelong Learning Agents (CoLLAs)},
   year={2024}
